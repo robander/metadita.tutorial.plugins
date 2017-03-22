@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2happyhtml">
+
+  <!-- Define "morse": first set params in an initialization step, 
+       then run preprocess, then call render.morse to make the resulting Morse documents -->
+  <target name="dita2morse" depends="morse.init, build-init, preprocess, morse.render"/>
+
+  <target name="morse.init">
+    <property name="preprocess.copy-image.skip" value="true"/>
+    <property name="out.ext" value="txt"/>
+  </target>
+
+  <target name="morse.render">
+    <pipeline message="Convert DITA topic to Morse text files" taskname="xslt">
+      <xslt basedir="${dita.temp.dir}"
+        destdir="${output.dir}"
+        reloadstylesheet="${dita.morse.reloadstylesheet}"
+        classpathref="dost.class.path"
+        extension="${morse.out.ext}"
+        style="${dita.plugin.org.metadita.morse.dir}/xsl/morse.xsl"
+        filenameparameter="FILENAME"
+        filedirparameter="FILEDIR">
+        <ditaFileset format="dita" processingRole="normal"/>
+        <mapper classname="org.dita.dost.util.JobMapper" to="${out.ext}"/>
+        <xmlcatalog refid="dita.catalog"/>
+      </xslt>
+    </pipeline>
+  </target>
+
+</project>
