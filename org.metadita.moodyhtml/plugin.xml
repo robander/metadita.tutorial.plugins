@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.metadita.moodyhtml">
+  <require plugin="org.dita.html5"/>
+  <transtype name="moodyhtml" extends="html5" desc="MoodyHTML">
+    <param name="args.moodyhtml.mood" desc="Specifies the mood of your moody content." type="enum">
+      <val>chipper</val>
+      <val>meh</val>
+      <val>grumps</val>
+      <val>stinky</val>
+      <val>cat</val>
+    </param>
+  </transtype>
+  <feature extension="dita.conductor.html5.param" file="params.xml"/>
+  <feature extension="dita.conductor.target.relative" file="moodybuild.xml"/>
+</plugin>

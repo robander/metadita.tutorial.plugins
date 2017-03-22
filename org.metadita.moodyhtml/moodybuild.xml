@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2moodyhtml">
+
+  <target name="dita2moodyhtml" depends="moodyhtml.init, dita2html5"/>
+
+  <target name="moodyhtml.init">
+    <property name="args.draft" value="yes"/>
+    <property name="args.css" value="${dita.plugin.org.metadita.moodyhtml.dir}/css/myBrand.css"/>
+    <property name="args.copycss" value="yes"/>
+    <property name="args.xsl" value="${dita.plugin.org.metadita.moodyhtml.dir}/xsl/moodyStyle.xsl"/>
+  </target>
+
+</project>
