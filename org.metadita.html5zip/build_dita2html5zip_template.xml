@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:dita="http://dita-ot.sourceforge.net" name="dita2html5zip">
+
+  <target name="dita2html5zip"
+          depends="html5zip.init,
+                   dita2html5,
+                   html5.postprocess.before.zip,
+                   ziphtml5"/>
+
+  <target name="html5zip.init">
+    <property name="temp.output.dir.name" value="internal_zip_dir"/>
+  </target>
+  
+  <target name="html5.postprocess.before.zip" 
+    dita:depends="{depend.html5.postprocess.before.zip}"
+    dita:extension="depends org.dita.dost.platform.InsertDependsAction">
+    <!-- Generated result files are now all in the directory
+      ${dita.output.dir}
+      which is eqiuvalent to
+      ${dita.temp.dir}/${temp.output.dir.name}
+      
+      If you need to post-process anything, or add additional files into the zip, your plugin
+      should update this target.
+      -->
+  </target>
+  
+  <target name="ziphtml5">
+    <dirname property="_map.dir.within.temp.zipdir" file="${dita.output.dir}/${user.input.file}" />
+    <condition property="html5.zipname" value="${dita.map.filename.root}.zip">
+      <and>
+        <isset property="dita.map.filename.root"/>
+        <not>
+          <isset property="html5.zipname"/>
+        </not>
+      </and>
+    </condition>
+    <condition property="html5.zipname" value="${dita.topic.filename.root}.zip">
+      <and>
+        <isset property="dita.topic.filename.root"/>
+        <not>
+          <isset property="html5.zipname"/>
+        </not>
+      </and>
+    </condition>
+    <condition property="html5.zipname" value="please.set.html5.zipname.property.zip">
+      <not>
+        <isset property="html5.zipname"/>
+      </not>
+    </condition>
+    <zip destfile="${output.dir}${file.separator}${html5.zipname}"
+      basedir="${_map.dir.within.temp.zipdir}"/>
+  </target>
+
+</project>
