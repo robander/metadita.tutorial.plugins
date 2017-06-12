@@ -4,7 +4,10 @@ This plugin takes advantage of the new `temp.output.dir.name` parameter added in
 DITA-OT 2.5 (so this will only work with DITA-OT 2.5 and later). That parameter
 allows the entire result of your build to be placed into a new directory within `temp`,
 so that you can do [...whatever you need...] to the files before returning
-[...whatever you want...].
+[...whatever you want...]. To use this plugin, place the contents of
+this `org.metadita.html5zip` directory into your DITA-OT 2.5 plugins directory,
+integrate, and select a transform type of `html5zip`. All other HTML5 parameters can
+be used as normal.
 
 With this plugin, all I'm doing at that point is zipping the files, so that I still
 get all of my content but already zipped up. This is particularly helpful if running
