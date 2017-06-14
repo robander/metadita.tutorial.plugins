@@ -1,5 +1,8 @@
 # Plugin to place all of your HTML5 output into a single zip
 
+Source code for the plugin described in a blog post here:
+http://metadita.org/toolkit/zippy.html
+
 This plugin takes advantage of the new `temp.output.dir.name` parameter added in 
 DITA-OT 2.5 (so this will only work with DITA-OT 2.5 and later). That parameter
 allows the entire result of your build to be placed into a new directory within `temp`,
@@ -17,7 +20,5 @@ The new parameter allows all of this to happen within the context of the tempora
 directory, so I never have to create or delete extra files in my source or output 
 directories. For details on the parameter, see: https://github.com/dita-ot/dita-ot/pull/2670
 
-The goal for this plugin is to show how to adapt it to any other transform types,
-to allow for post-processing and/or zipping of the result. If you already know enough
-about DITA-OT and Ant to be dangerous, it should be easy to adapt this for
-any other output type. Otherwise, stay tuned...
+For details on the plugin, how it's used, and how to extend this for your own use, see:
+[Making zippy HTML (or other zippy output)](http://metadita.org/toolkit/zippy.html)
