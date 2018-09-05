@@ -13,3 +13,6 @@ is an entirely new format. Based on [But what if I _want_ a whole new transform 
 (added in DITA-OT 2.5). This allows plugins to easily build off of existing transform types like HTML5, while easily
 adding post-processing steps (handled inside the temp directory) and/or returning a zip instead of discreet files.
 Described in the post [Making zippy HTML (or other zippy output)](http://metadita.org/toolkit/zippy.html)
+1. `org.metadita.cleanupmap`: Quick and easy plugin that works around an issue in DITA-OT processing of
+bookmaps that happen to use `<part>` to pull in maps. Based on a long thread in the [DITA-OT Slack channel](https://dita-ot.slack.com/archives/C03SENFUQ/p1536160123000100)
+and may warrant a blog post ... or maybe the readme will be enough?
