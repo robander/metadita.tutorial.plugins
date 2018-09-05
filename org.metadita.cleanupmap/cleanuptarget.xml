@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ant targets used by many or all IBM transform types -->
+<project xmlns:dita="http://dita-ot.sourceforge.net" name="cleanuptarget"
+  xmlns:if="ant:if"
+  xmlns:unless="ant:unless">
+
+  <target name="cleanup.map.structures" unless="skip.cleanup.map.structures">
+    <pipeline message="Update class attributes to match content models" taskname="cleanup-map-structures">
+      <xslt basedir="${dita.temp.dir}"
+        reloadstylesheet="${dita.preprocess.reloadstylesheet}"
+        style="${dita.plugin.org.metadita.cleanupmap.dir}/xsl/cleanupmap.xsl" filenameparameter="file-being-processed">
+        <ditafileset format="ditamap"/>
+        <xmlcatalog refid="dita.catalog"/>
+      </xslt>
+    </pipeline>
+  </target>
+  
+</project>

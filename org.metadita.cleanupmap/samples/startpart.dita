@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="startpart">
+  <title>I'm really a part</title>
+  <body>
+    <p>referenced from part</p>
+  </body>
+</topic>

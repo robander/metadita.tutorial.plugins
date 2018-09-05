@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd">
+<topic id="makechap">
+  <title>Make me another chapter!</title>
+  <body>
+    <p>Cause I'm pulled in as child of thing pulled in as part!</p>
+  </body>
+</topic>

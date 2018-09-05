@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "ibm-map.dtd">
+<map xml:lang="en-us"><title>I'm gonna be pulled in!</title>
+<topicref href="makepart.dita">
+<topicref href="makechap.dita"/>
+<topicref href="makechap2.dita"/>
+</topicref>
+</map>

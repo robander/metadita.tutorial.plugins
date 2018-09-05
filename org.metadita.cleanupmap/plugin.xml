@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="org.metadita.cleanupmap">
+  <!-- extension points -->
+  <extension-point id="metadita.xsl.cleanup.map.structures" name="XSLT import to fix map structures"/>
+  <feature extension="ant.import" file="cleanuptarget.xml"/>
+  <feature extension="depend.preprocess.post" value="cleanup.map.structures"/>
+  <template file="xsl/cleanupmap_template.xsl"/>
+</plugin>
