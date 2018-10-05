@@ -13,15 +13,14 @@
   <target name="morse.render">
     <pipeline message="Convert DITA topic to Morse text files" taskname="xslt">
       <xslt basedir="${dita.temp.dir}"
+        extension="${out.ext}"
         destdir="${output.dir}"
         reloadstylesheet="${dita.morse.reloadstylesheet}"
         classpathref="dost.class.path"
-        extension="${morse.out.ext}"
         style="${dita.plugin.org.metadita.morse.dir}/xsl/morse.xsl"
         filenameparameter="FILENAME"
         filedirparameter="FILEDIR">
         <ditaFileset format="dita" processingRole="normal"/>
-        <mapper classname="org.dita.dost.util.JobMapper" to="${out.ext}"/>
         <xmlcatalog refid="dita.catalog"/>
       </xslt>
     </pipeline>
