@@ -11,5 +11,5 @@
     </param>
   </transtype>
   <feature extension="dita.conductor.html5.param" file="params.xml"/>
-  <feature extension="dita.conductor.target.relative" file="moodybuild.xml"/>
+  <feature extension="ant.import" file="moodybuild.xml"/>
 </plugin>

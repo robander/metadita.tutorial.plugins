@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="org.metadita.html5zip">
   <extension-point id="depend.html5.postprocess.before.zip" name="HTML5 post process before zip"/>
-  <feature extension="dita.conductor.target.relative" file="conductor.xml"/>
+  <feature extension="ant.import" file="conductor.xml"/>
   <feature extension="dita.conductor.transtype.check" value="html5zip"/>
   <template file="build_dita2html5zip_template.xml"/>
   <require plugin="org.dita.html5"/>
